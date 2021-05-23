@@ -4,6 +4,8 @@
 Αρχικα δημιουργησα ενα docker image mongodb και εκει μεσα εκανα μια db "InfoSys" και μέσα εκει ενα collection "Students" που περασα εκει τα δεδομενα του students.json που μας ειχατε δωσει.
 Ο κώδικας ειναι ελεγμενος με postman, στο οποιο για το Authorization εβαζα μονος μου το uuid του endpoint 2 στο header Authorization του postman request και ολα τρεξανε ομαλως.
 
+Για το Authorization σε καθε endpoint περναω το request.headers/get('authorization') σε μια μεταβλητη uuid και ελεγχω αν το αποτελεσμα της is_session_valid με παραμετρο το uuid επιστρεφει εχει τιμη False, τοτε επιστρεφω μηνυμα λαθους και λεω οτι δεν εχει γινει authorization και δεν προχωραμε στα υπολοιπα κομματια του endpoint,αλλιως δεν κανω τιποτα.
+
 Επεξηγηση κωδικα:
 
 Endpoint 1:
